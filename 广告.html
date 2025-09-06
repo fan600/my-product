@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>历代传承 - 祖传秘方舒缓液</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f6f2;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c5c1f 0%, #4a8c31 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, #e6f4e6 0%, #c9e6c9 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2c5c1f;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #2c5c1f;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-left: 5px solid #4a8c31;
+            padding-left: 15px;
+        }
+        
+        h2 {
+            color: #3a7530;
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .indications {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .indication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .indication-item {
+            background: #f0f7eb;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .indication-item:before {
+            content: "?";
+            color: #4a8c31;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .usage {
+            background: linear-gradient(135deg, #e6f4e6 0%, #f0f7eb 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 25px;
+        }
+        
+        .step {
+            background: white;
+            width: 220px;
+            padding: 25px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            background: #4a8c31;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .benefit-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            margin: 15px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #4a8c31;
+            margin-bottom: 15px;
+        }
+        
+        .guarantee {
+            background: linear-gradient(135deg, #2c5c1f 0%, #4a8c31 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b00;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            padding: 16px 50px;
+            border-radius: 50px;
+            margin-top: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255,107,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #ff8c33;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background: #2c5c1f;
+            color: white;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .warning {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                width: 100%;
+                height: 300px;
+            }
+            
+            .benefit-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">历代传承</div>
+            <div class="tagline">祖传秘方舒缓液 · 根治痛症 · 重现活力</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>告别疼痛，重获自由活动能力</h1>
+                <p>历经代代人传承与改良的祖传秘方，精选三十余种名贵中药材，采用古法炮制与现代工艺相结合，针对各类风湿骨痛问题，直达病灶，根治彻底。</p>
+                <p>无论您遭受风湿、类风湿、关节痛、颈椎痛、腰椎问题困扰，还是扭伤、打伤、腰酸背痛，我们的祖传秘方都能为您带来显著改善。</p>
+            </div>
+            <div class="hero-image">
+                <a href="https://imgur.la/image/e98985a72db9410327ff1c43fa79a9f0.6vfXk0"><img src="https://imgur.la/images/2025/09/06/e98985a72db9410327ff1c43fa79a9f0.md.jpg" alt="e98985a72db9410327ff1c43fa79a9f0" border="0"></a>
+            </div>
+        </section>
+
+        <section class="indications">
+            <h2>适应人群</h2>
+            <p>我们的祖传秘方舒缓液对以下症状有显著效果：</p>
+            <div class="indication-grid">
+                <div class="indication-item">1、风湿、类风湿</div>
+                <div class="indication-item">2、关节痛、颈椎痛</div>
+                <div class="indication-item">3、腰椎问题</div>
+                <div class="indication-item">4、扭伤、打伤</div>
+                <div class="indication-item">5、腰酸背痛筋骨</div>
+                <div class="indication-item">6、无名肿痛</div>
+                <div class="indication-item">7、四肢麻木</div>
+                <div class="indication-item">8、披筋</div>
+                <div class="indication-item">9、慢性腰肌劳损</div>
+                <div class="indication-item">10、痛风</div>
+            </div>
+        </section>
+
+        <section class="usage">
+            <h2>使用方法</h2>
+            <p>简单四步，轻松缓解疼痛：</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>清洁患处</h3>
+                    <p>洗净并擦干患处</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>适量涂抹</h3>
+                    <p>取本品适量用瓶珠抹擦患处</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>按摩吸收</h3>
+                    <p>5-10分钟发热渗入肌肤</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>坚持使用</h3>
+                    <p>一日2-3次，症状消失后再使用一周</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">***</div>
+                <h3>疗程短</h3>
+                <p>相比传统治疗方法，见效更快，疗程更短</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">***</div>
+                <h3>见效快</h3>
+                <p>首次使用即可感受到明显改善</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">***</div>
+                <h3>纯草本</h3>
+                <p>采用天然草本成分，无副作用</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">***</div>
+                <h3>恢复彻底</h3>
+                <p>症状消失后继续使用一周，防止复发</p>
+            </div>
+        </section>
+
+        <section class="guarantee">
+            <h2>千年智慧，五代传承</h2>
+            <p>免费试用，有效果再付费！</p>
+            <p>已有数万人通过我们的祖传秘方重获健康生活</p>
+            <a href="#" class="cta-button">立即购买</a>
+        </section>
+
+        <p class="warning">注意事项：本品为外用，禁止内服。孕妇、哺乳期妇女及皮肤破损者禁用。如出现过敏现象，请立即停止使用。</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p> 2024 广州松明药业有限公司 版权所有</p>
+            <p>微信联系:wxid_9ggpedhgxau922</p>
+        </div>
+    </footer>
+</body>
+</html>
